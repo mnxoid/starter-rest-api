@@ -22,10 +22,10 @@ app.use(express.static('public', options))
 app.get('/sessions', async (req, res) => {
   const mock_sessions = Array(20)
     .fill()
-    .map((x,i) => {
+    .map((x,i) => ({
       id: i,
       last_health: new Date()
-    })
+    }))
   res.json({sessions: mock_sessions}).end()
 })
 
